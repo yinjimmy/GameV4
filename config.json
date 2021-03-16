@@ -3,8 +3,9 @@
        "isLandscape": true,
        "isWindowTop": false,
        "name": "gamev4",
-       "width": 960,
+       "width": 1136,
        "height": 640,
+       "scale": 0.5,
        "entry": "src/main.lua",
        "consolePort": 6050,
        "uploadPort": 6060

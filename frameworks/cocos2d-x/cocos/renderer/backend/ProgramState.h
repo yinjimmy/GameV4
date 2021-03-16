@@ -72,7 +72,7 @@ struct TextureInfo
  * A program state object can create or reuse a program.
  * Each program state object keep its own unifroms and textures data.
  */
-class ProgramState : public Ref
+class CC_DLL ProgramState : public Ref
 {
 public:
     using UniformCallback = std::function<void(ProgramState*, const UniformLocation &)>;
