@@ -5,3 +5,9 @@ frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/build/
 frameworks/runtime-src/proj.android/app/.cxx/
 frameworks/runtime-src/proj.android/app/assets/
 frameworks/runtime-src/proj.android/.idea/
+frameworks/cocos2d-x/build/cocos2d_libs.xcodeproj/xcuserdata
+frameworks/cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj/xcuserdata
+frameworks/cocos2d-x/tools/simulator/frameworks/runtime-src/proj.ios_mac/simulator.xcodeproj/xcuserdata
+frameworks/cocos2d-x/tools/simulator/libsimulator/proj.ios_mac/libsimulator.xcodeproj/xcuserdata
+frameworks/runtime-src/proj.ios_mac/gamev4.xcodeproj/xcshareddata
+frameworks/runtime-src/proj.ios_mac/gamev4.xcodeproj/xcuserdata
