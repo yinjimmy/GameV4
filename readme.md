@@ -1,6 +1,10 @@
+[TOC]
+
+
 # GameV4
 
 Game with Cocos2d-x V4 [commit](https://github.com/cocos2d/cocos2d-x/commit/95e5d868ce5958c0dadfc485bdda52f1bc404fe0)
+
 
 # ENV
 
@@ -15,15 +19,27 @@ open frameworks/runtime-src/proj.ios_mac/gamev4.xcodeproj
 
 ## Android
 
-Use `Android Studio` import the `frameworks/runtime-src/proj.android` project file.
+Use [`Android Studio`](https://developer.android.com/studio) import the `frameworks/runtime-src/proj.android` project file.
 
-1. Android Studio 4.1.2 for
+NDK version: r16b, [Windows 64-bit](https://dl.google.com/android/repository/android-ndk-r16b-windows-x86_64.zip), [Mac OS X](https://dl.google.com/android/repository/android-ndk-r16b-darwin-x86_64.zip)
+
+1. [Settings for Android Studio 4.1.2](https://github.com/c0i/GameV4/commit/10b1b9ea13755bec157c190ea029f681788cd9c0):
     - Gradle Plugin Version 4.0.0
     - Gradle Version 6.1.1
 
-2. Android Studio 3.6 for:
-    - Gradle Plugin Version ?
-    - Gradle Version ?
+2. [Settings for Android Studio 3.5.1](https://github.com/c0i/GameV4/commit/71b9fae1324394e3f9db6ee4f794d3b3a296bc75):
+    - Gradle Plugin Version 3.1.0
+    - Gradle Version 5.1.1
+
+### Fix NDK when macOS >= 10.15
+
+1. Trust it
+
+    ```
+    xattr -rd com.apple.quarantine android-ndk-r16b
+    ```
+
+2. or Download it from Android Studio -> SDK Manager
 
 ## Windows
 
