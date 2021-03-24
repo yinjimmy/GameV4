@@ -1,4 +1,5 @@
 #include "ImGuiScene.h"
+#include "ui/CocosGUI.h"
 
 #if defined(CC_PLATFORM_PC)
 
@@ -13,6 +14,16 @@ ImGuiScene::ImGuiScene()
 void ImGuiScene::onEnter()
 {
     Scene::onEnter();
+    
+    auto button = cocos2d::ui::Button::create();
+    button->setTitleText("CLICK ME");
+    button->setTitleFontSize(64);
+    button->addClickEventListener([](Ref* o) {
+        static int cnt = 0;
+        CCLOG("CLICK ME %d", cnt++);
+    });
+    button->setPosition(getContentSize() / 2);
+    addChild(button);
     ImGuiEXT::getInstance()->addRenderLoop("#im01", CC_CALLBACK_0(ImGuiScene::onImGuiDraw, this), this);
 }
 

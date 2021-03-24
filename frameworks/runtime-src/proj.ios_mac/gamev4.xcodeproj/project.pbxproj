@@ -48,6 +48,7 @@
 		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
 		5200BECA1A53D9A500AC45E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5200BEC91A53D9A500AC45E4 /* Security.framework */; };
+		840E4618260ADA740091E812 /* ImGuiScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 840E4614260ADA740091E812 /* ImGuiScene.cpp */; };
 		846817862603D521006E9556 /* SimulatorLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 846817852603D521006E9556 /* SimulatorLog.m */; };
 		84EBB98726012A5800E8DFB7 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A8A4ED61F6F9AE70044495E /* config.json */; };
 		9FA3AE4E1BE9BCC900FC9645 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA3AE4D1BE9BCC900FC9645 /* CFNetwork.framework */; };
@@ -217,6 +218,8 @@
 		50D7C96D17EBBEE6005D0B91 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		5200BEC91A53D9A500AC45E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		840E4614260ADA740091E812 /* ImGuiScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImGuiScene.cpp; sourceTree = "<group>"; };
+		840E4615260ADA740091E812 /* ImGuiScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImGuiScene.h; sourceTree = "<group>"; };
 		846817852603D521006E9556 /* SimulatorLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimulatorLog.m; sourceTree = "<group>"; };
 		8468178B2603D549006E9556 /* SimulatorLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimulatorLog.h; sourceTree = "<group>"; };
 		9FA3AE4D1BE9BCC900FC9645 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
@@ -361,6 +364,16 @@
 			path = mac;
 			sourceTree = "<group>";
 		};
+		840E4613260ADA740091E812 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				840E4614260ADA740091E812 /* ImGuiScene.cpp */,
+				840E4615260ADA740091E812 /* ImGuiScene.h */,
+			);
+			name = test;
+			path = ../Classes/test;
+			sourceTree = "<group>";
+		};
 		9FF504791A5E86D600AFDA55 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +462,7 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				840E4613260ADA740091E812 /* test */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
 			);
@@ -660,6 +674,7 @@
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
 				A41646EA237E57D600D8F2AA /* main.m in Sources */,
 				9FF504851A5E87B100AFDA55 /* ConsoleWindowController.m in Sources */,
+				840E4618260ADA740091E812 /* ImGuiScene.cpp in Sources */,
 				846817862603D521006E9556 /* SimulatorLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
