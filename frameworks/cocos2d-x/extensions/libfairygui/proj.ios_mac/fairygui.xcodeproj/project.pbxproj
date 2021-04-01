@@ -169,6 +169,18 @@
 		7DCFF2D6237E40370031E954 /* GTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCFF2D1237E40370031E954 /* GTree.h */; };
 		7DCFF2D7237E40370031E954 /* GTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFF2D2237E40370031E954 /* GTree.cpp */; };
 		7DCFF2D8237E40370031E954 /* GTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFF2D2237E40370031E954 /* GTree.cpp */; };
+		84C89B3E261642E800EAA133 /* HtmlObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B38261642E800EAA133 /* HtmlObject.cpp */; };
+		84C89B3F261642E800EAA133 /* HtmlObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B38261642E800EAA133 /* HtmlObject.cpp */; };
+		84C89B40261642E800EAA133 /* HtmlElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C89B39261642E800EAA133 /* HtmlElement.h */; };
+		84C89B41261642E800EAA133 /* HtmlObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C89B3A261642E800EAA133 /* HtmlObject.h */; };
+		84C89B42261642E800EAA133 /* HtmlElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B3B261642E800EAA133 /* HtmlElement.cpp */; };
+		84C89B43261642E800EAA133 /* HtmlElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B3B261642E800EAA133 /* HtmlElement.cpp */; };
+		84C89B44261642E800EAA133 /* HtmlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C89B3C261642E800EAA133 /* HtmlParser.h */; };
+		84C89B45261642E800EAA133 /* HtmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B3D261642E800EAA133 /* HtmlParser.cpp */; };
+		84C89B46261642E800EAA133 /* HtmlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B3D261642E800EAA133 /* HtmlParser.cpp */; };
+		84C89B4B2616432E00EAA133 /* GLoader3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C89B492616432E00EAA133 /* GLoader3D.h */; };
+		84C89B4C2616432E00EAA133 /* GLoader3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B4A2616432E00EAA133 /* GLoader3D.cpp */; };
+		84C89B4D2616432E00EAA133 /* GLoader3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C89B4A2616432E00EAA133 /* GLoader3D.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -340,6 +352,14 @@
 		7DCFF2D0237E40370031E954 /* GTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTreeNode.h; sourceTree = "<group>"; };
 		7DCFF2D1237E40370031E954 /* GTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTree.h; sourceTree = "<group>"; };
 		7DCFF2D2237E40370031E954 /* GTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GTree.cpp; sourceTree = "<group>"; };
+		84C89B38261642E800EAA133 /* HtmlObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HtmlObject.cpp; sourceTree = "<group>"; };
+		84C89B39261642E800EAA133 /* HtmlElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlElement.h; sourceTree = "<group>"; };
+		84C89B3A261642E800EAA133 /* HtmlObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlObject.h; sourceTree = "<group>"; };
+		84C89B3B261642E800EAA133 /* HtmlElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HtmlElement.cpp; sourceTree = "<group>"; };
+		84C89B3C261642E800EAA133 /* HtmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlParser.h; sourceTree = "<group>"; };
+		84C89B3D261642E800EAA133 /* HtmlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HtmlParser.cpp; sourceTree = "<group>"; };
+		84C89B492616432E00EAA133 /* GLoader3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLoader3D.h; sourceTree = "<group>"; };
+		84C89B4A2616432E00EAA133 /* GLoader3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLoader3D.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +431,8 @@
 				4454027B1FB3E9E400869375 /* GList.h */,
 				4454027C1FB3E9E400869375 /* GLoader.cpp */,
 				4454027D1FB3E9E400869375 /* GLoader.h */,
+				84C89B4A2616432E00EAA133 /* GLoader3D.cpp */,
+				84C89B492616432E00EAA133 /* GLoader3D.h */,
 				4454027E1FB3E9E400869375 /* GMovieClip.cpp */,
 				4454027F1FB3E9E400869375 /* GMovieClip.h */,
 				445402801FB3E9E400869375 /* GObject.cpp */,
@@ -537,6 +559,7 @@
 		445402A61FB3E9E400869375 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				84C89B37261642E800EAA133 /* html */,
 				7D0EA2C22373EC5C008942A9 /* ByteBuffer.cpp */,
 				7D0EA2C32373EC5C008942A9 /* ByteBuffer.h */,
 				44905A4A1FC2D5E600C33C88 /* WeakPtr.cpp */,
@@ -603,6 +626,19 @@
 			path = tween;
 			sourceTree = "<group>";
 		};
+		84C89B37261642E800EAA133 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				84C89B38261642E800EAA133 /* HtmlObject.cpp */,
+				84C89B39261642E800EAA133 /* HtmlElement.h */,
+				84C89B3A261642E800EAA133 /* HtmlObject.h */,
+				84C89B3B261642E800EAA133 /* HtmlElement.cpp */,
+				84C89B3C261642E800EAA133 /* HtmlParser.h */,
+				84C89B3D261642E800EAA133 /* HtmlParser.cpp */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -612,14 +648,18 @@
 			files = (
 				7D0EA2DA2373EFF3008942A9 /* TweenManager.h in Headers */,
 				7DCFF2CB237E3F410031E954 /* GearFontSize.h in Headers */,
+				84C89B4B2616432E00EAA133 /* GLoader3D.h in Headers */,
 				7D0EA2E02373EFF4008942A9 /* GTweener.h in Headers */,
 				7D0EA2C62373EC5C008942A9 /* ByteBuffer.h in Headers */,
 				445402FB1FB3EFFA00869375 /* libfairygui_MAC.hpp in Headers */,
+				84C89B41261642E800EAA133 /* HtmlObject.h in Headers */,
 				7D0EA2EC2373F172008942A9 /* TranslationHelper.h in Headers */,
 				7D0EA2DF2373EFF3008942A9 /* GTween.h in Headers */,
+				84C89B44261642E800EAA133 /* HtmlParser.h in Headers */,
 				7DCFF2D6237E40370031E954 /* GTree.h in Headers */,
 				7D0EA2E42373EFF4008942A9 /* TweenPropType.h in Headers */,
 				44905A9C1FC809AA00C33C88 /* TextFormat.h in Headers */,
+				84C89B40261642E800EAA133 /* HtmlElement.h in Headers */,
 				7DCFF2CE237E3F490031E954 /* GPath.h in Headers */,
 				7DCFF2CC237E3F410031E954 /* GearDisplay2.h in Headers */,
 				7D0EA2D72373EFF3008942A9 /* EaseManager.h in Headers */,
@@ -712,6 +752,7 @@
 				44905A4C1FC2D5E600C33C88 /* WeakPtr.cpp in Sources */,
 				445402B51FB3E9E400869375 /* FUIRichText.cpp in Sources */,
 				445402E21FB3E9E400869375 /* UIPackage.cpp in Sources */,
+				84C89B42261642E800EAA133 /* HtmlElement.cpp in Sources */,
 				445402DE1FB3E9E400869375 /* ScrollPane.cpp in Sources */,
 				7D0EA2DD2373EFF3008942A9 /* GTweener.cpp in Sources */,
 				445402B71FB3E9E400869375 /* DragDropManager.cpp in Sources */,
@@ -737,8 +778,10 @@
 				445402C51FB3E9E400869375 /* GearLook.cpp in Sources */,
 				445402C21FB3E9E400869375 /* GearColor.cpp in Sources */,
 				445402E41FB3E9E400869375 /* ToolSet.cpp in Sources */,
+				84C89B4C2616432E00EAA133 /* GLoader3D.cpp in Sources */,
 				445402D41FB3E9E400869375 /* GRoot.cpp in Sources */,
 				445402D71FB3E9E400869375 /* GTextField.cpp in Sources */,
+				84C89B45261642E800EAA133 /* HtmlParser.cpp in Sources */,
 				445402C71FB3E9E400869375 /* GearText.cpp in Sources */,
 				7D0EA2D82373EFF3008942A9 /* TweenManager.cpp in Sources */,
 				445402B01FB3E9E400869375 /* Controller.cpp in Sources */,
@@ -754,6 +797,7 @@
 				44905A561FC3CCCD00C33C88 /* ChangePageAction.cpp in Sources */,
 				445402D31FB3E9E400869375 /* GRichTextField.cpp in Sources */,
 				445402CB1FB3E9E400869375 /* GImage.cpp in Sources */,
+				84C89B3E261642E800EAA133 /* HtmlObject.cpp in Sources */,
 				7D0EA2ED2373F172008942A9 /* TranslationHelper.cpp in Sources */,
 				7DCFF2D3237E40370031E954 /* GTreeNode.cpp in Sources */,
 				445402C31FB3E9E400869375 /* GearDisplay.cpp in Sources */,
@@ -801,6 +845,7 @@
 				44905A9B1FC809AA00C33C88 /* TextFormat.cpp in Sources */,
 				445403821FB4098900869375 /* UIEventDispatcher.cpp in Sources */,
 				445403831FB4098900869375 /* GButton.cpp in Sources */,
+				84C89B43261642E800EAA133 /* HtmlElement.cpp in Sources */,
 				445403841FB4098900869375 /* GComboBox.cpp in Sources */,
 				7DCFF2D8237E40370031E954 /* GTree.cpp in Sources */,
 				445403851FB4098900869375 /* GComponent.cpp in Sources */,
@@ -818,6 +863,7 @@
 				4454038F1FB4098900869375 /* GGraph.cpp in Sources */,
 				445403901FB4098900869375 /* GGroup.cpp in Sources */,
 				44905A4D1FC2D5E600C33C88 /* WeakPtr.cpp in Sources */,
+				84C89B46261642E800EAA133 /* HtmlParser.cpp in Sources */,
 				445403911FB4098900869375 /* GImage.cpp in Sources */,
 				445403921FB4098900869375 /* GLabel.cpp in Sources */,
 				445403931FB4098900869375 /* GList.cpp in Sources */,
@@ -841,6 +887,7 @@
 				445403A01FB4098900869375 /* PackageItem.cpp in Sources */,
 				445403A11FB4098900869375 /* PopupMenu.cpp in Sources */,
 				445403A21FB4098900869375 /* RelationItem.cpp in Sources */,
+				84C89B3F261642E800EAA133 /* HtmlObject.cpp in Sources */,
 				7DCFF2C2237E3EF20031E954 /* GPath.cpp in Sources */,
 				445403A31FB4098900869375 /* Relations.cpp in Sources */,
 				445403A41FB4098900869375 /* ScrollPane.cpp in Sources */,
@@ -848,6 +895,7 @@
 				445403A61FB4098900869375 /* UIConfig.cpp in Sources */,
 				7D0EA2C52373EC5C008942A9 /* ByteBuffer.cpp in Sources */,
 				445403A71FB4098900869375 /* UIObjectFactory.cpp in Sources */,
+				84C89B4D2616432E00EAA133 /* GLoader3D.cpp in Sources */,
 				445403A81FB4098900869375 /* UIPackage.cpp in Sources */,
 				7D0EA2E62373EFF4008942A9 /* TweenPropType.cpp in Sources */,
 				7DCFF2CA237E3F410031E954 /* GearDisplay2.cpp in Sources */,
@@ -914,13 +962,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Examples/cocos2d",
-					"$(SRCROOT)/../../Examples/cocos2d/cocos",
-					"$(SRCROOT)/../../Examples/cocos2d/cocos/audio/include",
-					"$(SRCROOT)/../../Examples/cocos2d/external",
-					"$(SRCROOT)/../../Examples/cocos2d/extensions",
-					"$(SRCROOT)/../../Examples/cocos2d/external/chipmunk/include/chipmunk",
-					"$(SRCROOT)/../../Examples/cocos2d/external/glfw3/include/mac",
+					"$(SRCROOT)/../../../",
+					"$(SRCROOT)/../../../cocos",
+					"$(SRCROOT)/../../../cocos/audio/include",
+					"$(SRCROOT)/../../../cocos/editor-support/",
+					"$(SRCROOT)/../../../external",
+					"$(SRCROOT)/../../../extensions",
+					"$(SRCROOT)/../../../external/chipmunk/include/chipmunk",
+					"$(SRCROOT)/../../../external/glfw3/include/mac",
 					"$(SRCROOT)/../Classes",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -972,13 +1021,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../Examples/cocos2d",
-					"$(SRCROOT)/../../Examples/cocos2d/cocos",
-					"$(SRCROOT)/../../Examples/cocos2d/cocos/audio/include",
-					"$(SRCROOT)/../../Examples/cocos2d/external",
-					"$(SRCROOT)/../../Examples/cocos2d/extensions",
-					"$(SRCROOT)/../../Examples/cocos2d/external/chipmunk/include/chipmunk",
-					"$(SRCROOT)/../../Examples/cocos2d/external/glfw3/include/mac",
+					"$(SRCROOT)/../../../",
+					"$(SRCROOT)/../../../cocos",
+					"$(SRCROOT)/../../../cocos/audio/include",
+					"$(SRCROOT)/../../../cocos/editor-support/",
+					"$(SRCROOT)/../../../external",
+					"$(SRCROOT)/../../../extensions",
+					"$(SRCROOT)/../../../external/chipmunk/include/chipmunk",
+					"$(SRCROOT)/../../../external/glfw3/include/mac",
 					"$(SRCROOT)/../Classes",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -992,6 +1042,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "libfairygui iOS";
 				SKIP_INSTALL = YES;
@@ -1002,6 +1053,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "libfairygui iOS";
 				SKIP_INSTALL = YES;
@@ -1015,6 +1067,7 @@
 				EXECUTABLE_PREFIX = "";
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1028,6 +1081,7 @@
 				EXECUTABLE_PREFIX = "";
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
