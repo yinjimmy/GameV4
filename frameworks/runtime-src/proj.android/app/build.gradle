@@ -15,7 +15,7 @@ android {
         externalNativeBuild {
             cmake {
                 arguments "-DCMAKE_FIND_ROOT_PATH=", "-DANDROID_STL=c++_static", "-DANDROID_TOOLCHAIN=clang", "-DANDROID_ARM_NEON=TRUE"
-                cppFlags "-frtti -fexceptions -fsigned-char"
+                cppFlags "-frtti -fexceptions -fsigned-char"  // -std=c++17, also gamev4/CMakeLists.txt
             }
         }
 
@@ -70,6 +70,7 @@ android {
             renderscriptDebuggable true
         }
     }
+//    ndkVersion '21.1.6352462'
 }
 
 def getCocosCommandPath() {
