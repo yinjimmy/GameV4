@@ -161,3 +161,6 @@ if(LINUX OR WINDOWS)
     cocos_copy_target_res(${APP_NAME} LINK_TO ${APP_RES_DIR}/res FOLDERS ${res_res_folders})
     cocos_copy_lua_scripts(${APP_NAME} ${res_src_folders} ${APP_RES_DIR}/src )
 endif()
+
+#https://zhuanlan.zhihu.com/p/196772123
+#target_compile_features(${APP_NAME} PRIVATE cxx_std_17)
