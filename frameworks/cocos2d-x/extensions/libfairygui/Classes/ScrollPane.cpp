@@ -41,26 +41,26 @@ static inline float sp_EaseFunc(float t, float d)
 }
 
 ScrollPane::ScrollPane(GComponent* owner)
-    : _vtScrollBar(nullptr),
-      _hzScrollBar(nullptr),
-      _header(nullptr),
-      _footer(nullptr),
-      _pageController(nullptr),
-      _needRefresh(false),
-      _refreshBarAxis(0),
-      _aniFlag(0),
-      _loop(0),
-      _headerLockedSize(0),
-      _footerLockedSize(0),
-      _vScrollNone(false),
-      _hScrollNone(false),
-      _tweening(0),
-      _xPos(0),
-      _yPos(0),
-      _floating(false),
-      _dontClipMargin(false),
-      _mouseWheelEnabled(true),
-      _hover(false)
+: _vtScrollBar(nullptr),
+_hzScrollBar(nullptr),
+_header(nullptr),
+_footer(nullptr),
+_pageController(nullptr),
+_needRefresh(false),
+_refreshBarAxis(0),
+_aniFlag(0),
+_loop(0),
+_headerLockedSize(0),
+_footerLockedSize(0),
+_vScrollNone(false),
+_hScrollNone(false),
+_tweening(0),
+_xPos(0),
+_yPos(0),
+_floating(false),
+_dontClipMargin(false),
+_mouseWheelEnabled(true),
+_hover(false)
 {
     _owner = owner;
 
@@ -859,7 +859,9 @@ GObject* ScrollPane::hitTest(const cocos2d::Vec2& pt, const cocos2d::Camera* cam
     if (_maskContainer->isClippingEnabled())
     {
         Vec2 localPoint = _maskContainer->convertToNodeSpace(pt);
-        if (_maskContainer->getClippingRegion().containsPoint(localPoint))
+        Rect rect; // fix by u0u0. rect.origin must 0,0
+        rect.size = _maskContainer->getClippingRegion().size;
+        if (rect.containsPoint(localPoint))
             return _owner;
         else
             return nullptr;

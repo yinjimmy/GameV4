@@ -60,9 +60,9 @@ public:
 
 protected:
     virtual void handleInit() override;
-    virtual void onInit() {};
-    virtual void onShown() {};
-    virtual void onHide() {};
+    virtual void onInit(); // lua can't override, send a event callback
+    virtual void onShown(); // lua can't override, send a event callback
+    virtual void onHide(); // lua can't override, send a event callback
     virtual void doShowAnimation();
     virtual void doHideAnimation();
 

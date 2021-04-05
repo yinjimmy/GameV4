@@ -66,10 +66,7 @@ int ToolSet::findInStringArray(const std::vector<std::string>& arr, const std::s
 
 bool ToolSet::isFileExist(const std::string & fileName)
 {
-    bool tmp = FileUtils::getInstance()->isPopupNotify();
-    FileUtils::getInstance()->setPopupNotify(false);
     bool ret = FileUtils::getInstance()->isFileExist(fileName);
-    FileUtils::getInstance()->setPopupNotify(tmp);
     return ret;
 }
 

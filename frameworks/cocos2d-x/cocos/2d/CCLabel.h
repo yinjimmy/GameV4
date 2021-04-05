@@ -2,6 +2,7 @@
  Copyright (c) 2013      Zynga Inc.
  Copyright (c) 2013-2016 Chukong Technologies Inc.
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
+ Copyright (c) 2021 cocos2d-lua.org
 
  http://www.cocos2d-x.org
 
@@ -132,6 +133,8 @@ public:
         CHARMAP,
         STRING_TEXTURE
     };
+    
+    static void setTTFScaleFactor(float v);
     
     /// @name Creators
     /// @{
@@ -423,7 +426,7 @@ public:
     /**
      * Enable underline
      */
-    void enableUnderline();
+    void enableUnderline(const Color4B& underlineColor = Color4B(0, 0, 0, 0));
 
     /**
      * Enables strikethrough.
@@ -666,6 +669,15 @@ public:
     virtual void removeAllChildrenWithCleanup(bool cleanup) override;
     virtual void removeChild(Node* child, bool cleanup = true) override;
     virtual void setGlobalZOrder(float globalZOrder) override;
+    
+    // override for ttf anti scale
+    virtual void setScaleX(float scaleX) override;
+    virtual void setScaleY(float scaleY) override;
+    virtual void setScale(float scale) override;
+    virtual void setScale(float scaleX, float scaleY) override;
+    virtual float getScaleX() const override;
+    virtual float getScaleY() const override;
+    virtual float getScale() const override;
 
 CC_CONSTRUCTOR_ACCESS:
     /**
@@ -864,6 +876,7 @@ protected:
 
     bool _boldEnabled;
     DrawNode* _underlineNode;
+    Color4B _underlineColor4B;
     bool _strikethroughEnabled;
     
     backend::UniformLocation _mvpMatrixLocation;
@@ -875,6 +888,9 @@ protected:
     
 private:
     CC_DISALLOW_COPY_AND_ASSIGN(Label);
+    float _nodeScaleX;
+    float _nodeScaleY;
+    Size _ttfContentSize;
 };
 
 // end group

@@ -62,6 +62,7 @@
     <ClCompile Include="..\manual\cocostudio\lua_cocos2dx_coco_studio_manual.cpp" />
     <ClCompile Include="..\manual\cocostudio\lua_cocos2dx_csloader_manual.cpp" />
     <ClCompile Include="..\manual\extension\lua_cocos2dx_extension_manual.cpp" />
+    <ClCompile Include="..\manual\fairygui\lua_fairygui.cpp" />
     <ClCompile Include="..\manual\LuaBasicConversions.cpp" />
     <ClCompile Include="..\manual\lua_module_register.cpp" />
     <ClCompile Include="..\manual\navmesh\lua_cocos2dx_navmesh_conversions.cpp" />
@@ -132,6 +133,7 @@
     <ClInclude Include="..\manual\cocostudio\lua_cocos2dx_coco_studio_manual.hpp" />
     <ClInclude Include="..\manual\cocostudio\lua_cocos2dx_csloader_manual.hpp" />
     <ClInclude Include="..\manual\extension\lua_cocos2dx_extension_manual.h" />
+    <ClInclude Include="..\manual\fairygui\lua_fairygui.hpp" />
     <ClInclude Include="..\manual\Lua-BindingsExport.h" />
     <ClInclude Include="..\manual\LuaBasicConversions.h" />
     <ClInclude Include="..\manual\lua_module_register.h" />

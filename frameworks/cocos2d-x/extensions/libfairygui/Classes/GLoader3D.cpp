@@ -286,7 +286,6 @@ void GLoader3D::clearContent()
         _container->removeChild(_content);
         CC_SAFE_RELEASE_NULL(_content);
     }
-    
     _contentItem = nullptr;
 }
 

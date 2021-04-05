@@ -73,6 +73,9 @@
     <Filter Include="manual\navmesh">
       <UniqueIdentifier>{fa8be49e-8b79-4dc5-8f28-febde1347eda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="manual\fairygui">
+      <UniqueIdentifier>{6e5f3ce5-1387-441d-85d1-2e1479e6c4f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\external\lua\tolua\tolua_event.c">
@@ -272,6 +275,9 @@
     </ClCompile>
     <ClCompile Include="..\manual\ui\lua_cocos2dx_webview_manual.cpp">
       <Filter>manual\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\manual\fairygui\lua_fairygui.cpp">
+      <Filter>manual\fairygui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -481,6 +487,9 @@
     </ClInclude>
     <ClInclude Include="..\manual\ui\lua_cocos2dx_webview_manual.hpp">
       <Filter>manual\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\manual\fairygui\lua_fairygui.hpp">
+      <Filter>manual\fairygui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

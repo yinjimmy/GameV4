@@ -57,6 +57,7 @@
 
 #endif
 
+#include "scripting/lua-bindings/manual/fairygui/lua_fairygui.hpp"
 
 USING_NS_CC;
 using namespace std;
@@ -105,6 +106,8 @@ static int register_all_packages(lua_State* L)
 #endif // CC_USE_IMGUI
 
 
+    // FairyGui
+    register_fairygui_manual(L);
 
     return 0; //flag for packages manager
 }

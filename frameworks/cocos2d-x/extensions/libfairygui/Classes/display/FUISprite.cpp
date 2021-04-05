@@ -100,20 +100,12 @@ void FUISprite::setScaleByTile(bool value)
 
 void FUISprite::setGrayed(bool value)
 {
-#if defined(ENGINEX_VERSION)
-    auto isETC1 = getTexture() && getTexture()->getTextureFormatEXT() == TextureFormatEXT::ETC1_ALPHA;
-    if (value) {
-        Sprite::updateShaders(positionTextureColor_vert, (isETC1) ? etc1Gray_frag : grayScale_frag);
-    }
-    else {
-        Sprite::updateShaders(positionTextureColor_vert, (isETC1) ? etc1_frag : positionTextureColor_frag);
-    }
-#elif COCOS2D_VERSION >= 0x00040000
+#if COCOS2D_VERSION >= 0x00040000
     auto isETC1 = getTexture() && getTexture()->getAlphaTextureName();
     if (value) {
-        Sprite::updateShaders(positionTextureColor_vert, (isETC1)?etc1Gray_frag:grayScale_frag);
+        Sprite::setProgramState(isETC1 ? backend::ProgramType::ETC1_GRAY : backend::ProgramType::GRAY_SCALE);
     } else {
-        Sprite::updateShaders(positionTextureColor_vert, (isETC1)?etc1_frag:positionTextureColor_frag);
+        Sprite::setProgramState(isETC1 ? backend::ProgramType::ETC1 : backend::ProgramType::POSITION_TEXTURE_COLOR);
     }
 #else
     GLProgramState* glState = nullptr;
@@ -356,14 +348,12 @@ void FUISprite::updateRadial(void)
     }
     else
     {
-        triangleCount = _vertexDataCount - 2;
+        triangleCount = _vertexDataCount - 2;//fix crash when dynamic update 'fillAmount'
     }
-    
     updateColor();
 
     if (!sameIndexCount)
     {
-
         //    First we populate the array with the _midpoint, then all
         //    vertices/texcoords/colors of the 12 'o clock start and edges and the hitpoint
         _vertexData[0].texCoords = textureCoordFromAlphaPoint(midpoint);
