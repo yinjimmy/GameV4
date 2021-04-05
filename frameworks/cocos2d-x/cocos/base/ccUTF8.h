@@ -63,7 +63,7 @@ std::string toString(T arg)
     return ss.str();
 }
 
-std::string CC_DLL format(const char* format, ...) CC_FORMAT_PRINTF(1, 2);
+CC_DLL std::string format(const char* format, ...) CC_FORMAT_PRINTF(1, 2);
 
 /**
  *  @brief Converts from UTF8 string to UTF16 string.

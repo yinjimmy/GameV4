@@ -31,6 +31,7 @@ set(lua_bindings_manual_headers
     manual/cocostudio/CustomGUIReader.h
     manual/ui/lua_cocos2dx_ui_manual.hpp
     manual/controller/lua_cocos2dx_controller_manual.hpp
+    manual/fairygui/lua_fairygui.hpp
     )
 
 set(lua_bindings_manual_files
@@ -66,6 +67,7 @@ set(lua_bindings_manual_files
     manual/physics3d/lua_cocos2dx_physics3d_manual.cpp
     manual/navmesh/lua_cocos2dx_navmesh_conversions.cpp
     manual/navmesh/lua_cocos2dx_navmesh_manual.cpp
+        manual/fairygui/lua_fairygui.cpp
     )
 
 set(lua_bindings_auto_headers
@@ -168,6 +170,7 @@ target_link_libraries(luacocos2d ${lua_ext_depend})
 target_include_directories(luacocos2d
     PRIVATE manual/platform/android
     PRIVATE manual/platform/android/jni
+    PRIVATE ${cocos_root}/extensions/libfairygui/Classes
     INTERFACE ${cocos_root}/cocos/scripting/lua-bindings/auto
     INTERFACE ${cocos_root}/cocos/scripting/lua-bindings/manual
 )

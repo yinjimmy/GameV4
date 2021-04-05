@@ -211,14 +211,6 @@ void FUIContainer::setInverted(bool inverted)
 
 void FUIContainer::onEnter()
 {
-#if CC_ENABLE_SCRIPT_BINDING && COCOS2D_VERSION < 0x00040000
-    if (_scriptType == kScriptTypeJavascript)
-    {
-        if (ScriptEngineManager::sendNodeEventToJSExtended(this, kNodeOnEnter))
-            return;
-    }
-#endif
-
     Node::onEnter();
 
     if (_stencilClippingSupport != nullptr && _stencilClippingSupport->_stencil != nullptr)
@@ -230,14 +222,6 @@ void FUIContainer::onEnter()
 
 void FUIContainer::onEnterTransitionDidFinish()
 {
-#if CC_ENABLE_SCRIPT_BINDING && COCOS2D_VERSION < 0x00040000
-    if (_scriptType == kScriptTypeJavascript)
-    {
-        if (ScriptEngineManager::sendNodeEventToJSExtended(this, kNodeOnEnterTransitionDidFinish))
-            return;
-    }
-#endif
-
     Node::onEnterTransitionDidFinish();
 
     if (_stencilClippingSupport != nullptr && _stencilClippingSupport->_stencil != nullptr)
@@ -248,14 +232,6 @@ void FUIContainer::onEnterTransitionDidFinish()
 
 void FUIContainer::onExitTransitionDidStart()
 {
-#if CC_ENABLE_SCRIPT_BINDING && COCOS2D_VERSION < 0x00040000
-    if (_scriptType == kScriptTypeJavascript)
-    {
-        if (ScriptEngineManager::sendNodeEventToJSExtended(this, kNodeOnExitTransitionDidStart))
-            return;
-    }
-#endif
-
     if (_stencilClippingSupport != nullptr && _stencilClippingSupport->_stencil != nullptr)
         _stencilClippingSupport->_stencil->onExitTransitionDidStart();
     Node::onExitTransitionDidStart();
@@ -263,14 +239,6 @@ void FUIContainer::onExitTransitionDidStart()
 
 void FUIContainer::onExit()
 {
-#if CC_ENABLE_SCRIPT_BINDING && COCOS2D_VERSION < 0x00040000
-    if (_scriptType == kScriptTypeJavascript)
-    {
-        if (ScriptEngineManager::sendNodeEventToJSExtended(this, kNodeOnExit))
-            return;
-    }
-#endif
-
     if (_stencilClippingSupport != nullptr && _stencilClippingSupport->_stencil != nullptr)
         _stencilClippingSupport->_stencil->onExit();
     

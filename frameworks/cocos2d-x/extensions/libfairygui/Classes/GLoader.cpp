@@ -10,19 +10,19 @@ NS_FGUI_BEGIN
 USING_NS_CC;
 
 GLoader::GLoader()
-    : _autoSize(false),
-    _align(TextHAlignment::LEFT),
-    _verticalAlign(TextVAlignment::TOP),
-    _fill(LoaderFillType::NONE),
-    _shrinkOnly(false),
-    _updatingLayout(false),
-    _contentItem(nullptr),
-    _contentStatus(0),
-    _content(nullptr),
-    _content2(nullptr),
-    _playAction(nullptr),
-    _playing(true),
-    _frame(0)
+: _autoSize(false),
+_align(TextHAlignment::LEFT),
+_verticalAlign(TextVAlignment::TOP),
+_fill(LoaderFillType::NONE),
+_shrinkOnly(false),
+_updatingLayout(false),
+_contentItem(nullptr),
+_contentStatus(0),
+_content(nullptr),
+_content2(nullptr),
+_playAction(nullptr),
+_playing(true),
+_frame(0)
 {
 }
 

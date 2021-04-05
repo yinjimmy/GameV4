@@ -596,6 +596,7 @@ bool Node::isVisible() const
     return _visible;
 }
 
+
 /// isVisible setter
 void Node::setVisible(bool visible)
 {

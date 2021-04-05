@@ -432,6 +432,10 @@
 		566F016019B5EB0F00FCA620 /* CustomGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 566F015D19B5EB0F00FCA620 /* CustomGUIReader.cpp */; };
 		566F016119B5EB0F00FCA620 /* CustomGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 566F015E19B5EB0F00FCA620 /* CustomGUIReader.h */; };
 		566F016219B5EB0F00FCA620 /* CustomGUIReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 566F015E19B5EB0F00FCA620 /* CustomGUIReader.h */; };
+		84EF9AEB261B4C5A0094D74A /* lua_fairygui.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84EF9AE9261B4C5A0094D74A /* lua_fairygui.hpp */; };
+		84EF9AEC261B4C5A0094D74A /* lua_fairygui.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 84EF9AE9261B4C5A0094D74A /* lua_fairygui.hpp */; };
+		84EF9AED261B4C5A0094D74A /* lua_fairygui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EF9AEA261B4C5A0094D74A /* lua_fairygui.cpp */; };
+		84EF9AEE261B4C5A0094D74A /* lua_fairygui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EF9AEA261B4C5A0094D74A /* lua_fairygui.cpp */; };
 		ADAC23ED1C2044A60049A6A2 /* lua_module_register.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C0D21C196B9500733781 /* lua_module_register.cpp */; };
 		ADD1C0D51C196B9500733781 /* lua_module_register.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1C0D21C196B9500733781 /* lua_module_register.cpp */; };
 		ADD1C0D61C196B9500733781 /* lua_module_register.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD1C0D31C196B9500733781 /* lua_module_register.h */; };
@@ -616,6 +620,8 @@
 		507B43531C31FA0C0067B53E /* libluacocos2d tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libluacocos2d tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		566F015D19B5EB0F00FCA620 /* CustomGUIReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomGUIReader.cpp; sourceTree = "<group>"; };
 		566F015E19B5EB0F00FCA620 /* CustomGUIReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGUIReader.h; sourceTree = "<group>"; };
+		84EF9AE9261B4C5A0094D74A /* lua_fairygui.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_fairygui.hpp; sourceTree = "<group>"; };
+		84EF9AEA261B4C5A0094D74A /* lua_fairygui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_fairygui.cpp; sourceTree = "<group>"; };
 		ADD1C0D21C196B9500733781 /* lua_module_register.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_module_register.cpp; sourceTree = "<group>"; };
 		ADD1C0D31C196B9500733781 /* lua_module_register.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_module_register.h; sourceTree = "<group>"; };
 		ADD1C0D41C196B9500733781 /* Lua-BindingsExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lua-BindingsExport.h"; sourceTree = "<group>"; };
@@ -712,6 +718,7 @@
 		15C1BCD21986525900A46ACC /* cocos2d */ = {
 			isa = PBXGroup;
 			children = (
+				84EF9AE8261B4C5A0094D74A /* fairygui */,
 				15C1BCD31986525900A46ACC /* lua_cocos2dx_deprecated.cpp */,
 				15C1BCD41986525900A46ACC /* lua_cocos2dx_deprecated.h */,
 				15C1BCD71986525900A46ACC /* lua_cocos2dx_manual.cpp */,
@@ -1044,6 +1051,16 @@
 			path = audioengine;
 			sourceTree = "<group>";
 		};
+		84EF9AE8261B4C5A0094D74A /* fairygui */ = {
+			isa = PBXGroup;
+			children = (
+				84EF9AE9261B4C5A0094D74A /* lua_fairygui.hpp */,
+				84EF9AEA261B4C5A0094D74A /* lua_fairygui.cpp */,
+			);
+			name = fairygui;
+			path = ../fairygui;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1128,6 +1145,7 @@
 				15C1C2D41987499F00A46ACC /* lua_cocos2dx_auto.hpp in Headers */,
 				3866FAFA2364450A009CC05A /* CCArray.h in Headers */,
 				150906F119D556C8002C4D97 /* lua_cocos2dx_audioengine_auto.hpp in Headers */,
+				84EF9AEB261B4C5A0094D74A /* lua_fairygui.hpp in Headers */,
 				F4FE0D5919ECD00100B8B12B /* luasocket_scripts.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1159,6 +1177,7 @@
 				15415AAC19A71A53004F1E71 /* buffer.h in Headers */,
 				15EFA650198B3342000C57D3 /* lualib.h in Headers */,
 				155C7E1519A71CAA00F08B25 /* Lua_web_socket.h in Headers */,
+				84EF9AEC261B4C5A0094D74A /* lua_fairygui.hpp in Headers */,
 				15EFA64B198B3320000C57D3 /* tolua_event.h in Headers */,
 				15A561EF1B00A3F1005D4720 /* lua_cocos2dx_physics3d_manual.h in Headers */,
 				15EFA64C198B3320000C57D3 /* tolua++.h in Headers */,
@@ -1392,6 +1411,7 @@
 				15415AD519A71A53004F1E71 /* udp.c in Sources */,
 				150983D01B1C0554007F3818 /* lua_cocos2dx_navmesh_auto.cpp in Sources */,
 				ED1AA90E215DF5F3004ABA9F /* lua_downloader.cpp in Sources */,
+				84EF9AED261B4C5A0094D74A /* lua_fairygui.cpp in Sources */,
 				15415ADD19A71A53004F1E71 /* usocket.c in Sources */,
 				15AC69DC1987710400D17520 /* tolua_push.c in Sources */,
 				15AC69DD1987710400D17520 /* tolua_to.c in Sources */,
@@ -1466,6 +1486,7 @@
 				15415AA619A71A53004F1E71 /* auxiliar.c in Sources */,
 				15B575501A6F4D1500041C20 /* lua-cocos-studio-conversions.cpp in Sources */,
 				15EFA647198B3311000C57D3 /* tolua_is.c in Sources */,
+				84EF9AEE261B4C5A0094D74A /* lua_fairygui.cpp in Sources */,
 				15EFA648198B3311000C57D3 /* tolua_map.c in Sources */,
 				15EFA649198B3311000C57D3 /* tolua_push.c in Sources */,
 				15EFA64A198B3311000C57D3 /* tolua_to.c in Sources */,
@@ -1665,6 +1686,7 @@
 					"$(SRCROOT)/../../../editor-support/cocosbuilder",
 					"$(SRCROOT)/../../../ui",
 					"$(SRCROOT)/../../../storage",
+					"$(SRCROOT)/../../../../extensions/libfairygui/Classes",
 					"$(SRCROOT)/../../../../extensions",
 					"$(SRCROOT)/../../../../external",
 					"$(SRCROOT)/../../../../external/chipmunk/include",
@@ -1725,6 +1747,7 @@
 					"$(SRCROOT)/../../../editor-support/cocosbuilder",
 					"$(SRCROOT)/../../../ui",
 					"$(SRCROOT)/../../../storage",
+					"$(SRCROOT)/../../../../extensions/libfairygui/Classes",
 					"$(SRCROOT)/../../../../extensions",
 					"$(SRCROOT)/../../../../external",
 					"$(SRCROOT)/../../../../external/chipmunk/include",

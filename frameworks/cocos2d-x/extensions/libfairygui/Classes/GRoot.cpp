@@ -1,5 +1,4 @@
 #include "GRoot.h"
-#include "AudioEngine.h"
 #include "UIConfig.h"
 #include "UIPackage.h"
 
@@ -481,8 +480,9 @@ void GRoot::playSound(const std::string& url, float volumnScale)
         return;
 
     PackageItem* pi = UIPackage::getItemByURL(url);
-    if (pi)
-        AudioEngine::play2d(pi->file, false, _soundVolumeScale * volumnScale);
+    if (pi && UIConfig::onMusicCallback) {
+        UIConfig::onMusicCallback(pi->file);
+    }
 }
 
 void GRoot::setSoundEnabled(bool value)
@@ -531,7 +531,7 @@ bool GRoot::initWithScene(cocos2d::Scene* scene, int zOrder)
 
     if (_inst == nullptr)
         _inst = this;
-
+    
     _inputProcessor = new InputProcessor(this);
     _inputProcessor->setCaptureCallback(CC_CALLBACK_1(GRoot::onTouchEvent, this));
 
