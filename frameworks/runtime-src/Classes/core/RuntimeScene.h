@@ -14,6 +14,7 @@ public:
 
 	virtual bool init();
 
+	virtual void onExit() override;
 	virtual void onEnter() override;
 };
 

@@ -41,12 +41,15 @@ public:
     virtual void quit();
     virtual void relaunch();
     virtual void setOnTop(bool yes);
+    void setReloadGame(bool yes);
     virtual void openNewPlayer();
     virtual void openNewPlayerWithProjectConfig(const ProjectConfig &config);
     virtual void openProjectWithProjectConfig(const ProjectConfig &config);
 
     virtual int getPositionX();
     virtual int getPositionY();
+
+    void reloadGame();
 protected:
     SimulatorWin();
 
@@ -56,6 +59,7 @@ protected:
     HWND _hwndConsole;
     AppDelegate *_app;
     FILE *_writeDebugLogFile;
+    bool _isReloadGame = false;
 
     // 
     void setupUI();

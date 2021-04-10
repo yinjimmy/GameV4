@@ -55,6 +55,13 @@
 #include "platform/win32/PlayerWin.h"
 #include "platform/win32/PlayerMenuServiceWin.h"
 
+// file watch
+extern "C" {
+#define DMON_IMPL
+#include "core/desktop/dmon.h"
+}
+
+
 // define 1 to open console ui and setup windows system menu, 0 to disable
 #define SIMULATOR_WITH_CONSOLE_AND_MENU 1
 
@@ -125,6 +132,26 @@ static void initGLContextAttrs()
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
+static void watch_callback(dmon_watch_id watch_id, dmon_action action, const char* rootdir,
+    const char* filepath, const char* oldfilepath, void* user)
+{
+    switch (action) {
+    case DMON_ACTION_CREATE:
+        printf("CREATE: [%s]%s\n", rootdir, filepath);
+        break;
+    case DMON_ACTION_DELETE:
+        printf("DELETE: [%s]%s\n", rootdir, filepath);
+        break;
+    case DMON_ACTION_MODIFY:
+        printf("MODIFY: [%s]%s\n", rootdir, filepath);
+        SimulatorWin::getInstance()->reloadGame();
+        break;
+    case DMON_ACTION_MOVE:
+        printf("MOVE: [%s]%s -> [%s]%s\n", rootdir, oldfilepath, rootdir, filepath);
+        break;
+    }
+}
+
 SimulatorWin *SimulatorWin::_instance = nullptr;
 
 SimulatorWin *SimulatorWin::getInstance()
@@ -142,10 +169,13 @@ SimulatorWin::SimulatorWin()
     , _app(nullptr)
     , _writeDebugLogFile(nullptr)
 {
+    dmon_init();
 }
 
 SimulatorWin::~SimulatorWin()
 {
+    dmon_deinit();
+
     CC_SAFE_DELETE(_app);
     if (_writeDebugLogFile)
     {
@@ -170,6 +200,11 @@ void SimulatorWin::setOnTop(bool yes)
 {
     auto flag = yes ? HWND_TOPMOST : HWND_NOTOPMOST;
     SetWindowPos(_hwnd, flag, 1, 1, 1, 1, SWP_NOMOVE | SWP_NOSIZE);
+}
+
+void SimulatorWin::setReloadGame(bool yes)
+{
+    _isReloadGame = yes;
 }
 
 void SimulatorWin::openNewPlayer()
@@ -388,8 +423,12 @@ int SimulatorWin::run()
         MoveWindow(_hwnd, pos.x, pos.y, rect.right - rect.left, rect.bottom - rect.top, FALSE);
     }
 
+    auto path = getWorkspacePath();
+    auto luaSrcPath = path + "/src/";
+    dmon_watch(luaSrcPath.c_str(), watch_callback, DMON_WATCHFLAGS_RECURSIVE, NULL);
+
     // path for looking Lang file, Studio Default images
-    FileUtils::getInstance()->addSearchPath(getWorkspacePath());
+    FileUtils::getInstance()->addSearchPath(path);
 
 #if SIMULATOR_WITH_CONSOLE_AND_MENU > 0
     // init player services
@@ -482,6 +521,7 @@ void SimulatorWin::setupUI()
     menuBar->addItem("REFRESH_MENU", tr("Refresh"), "VIEW_MENU");
 
     menuBar->addItem("ONTOP_MENU", tr("Top"), "VIEW_MENU");
+    menuBar->addItem("RELOAD_GAME_MENU", tr("ReloadGame"), "VIEW_MENU");
 
     HWND &hwnd = _hwnd;
     ProjectConfig &project = _project;
@@ -506,6 +546,11 @@ void SimulatorWin::setupUI()
                         {
                             menuItem->setChecked(!menuItem->isChecked());
                             _instance->setOnTop(menuItem->isChecked());
+                        }
+                        else if(data == "RELOAD_GAME_MENU")
+                        {
+                            menuItem->setChecked(!menuItem->isChecked());
+                            _instance->setReloadGame(menuItem->isChecked());
                         }
 
                         if (menuItem->isChecked())
@@ -792,6 +837,14 @@ std::string SimulatorWin::getWorkspacePath()
         return workspace;
     }
     return appExeFolder;
+}
+
+#include "core/RuntimeScene.h"
+void SimulatorWin::reloadGame()
+{
+    CCLOG("%s:%s", __FUNCTION__, _isReloadGame ? "yes": "no");
+    if (_isReloadGame)
+        Director::getInstance()->replaceScene(RuntimeScene::create());
 }
 
 LRESULT CALLBACK SimulatorWin::windowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)

@@ -7,6 +7,7 @@
 //#include "scripting/lua-bindings/manual/fairygui/lua_fairygui.hpp"
 #include "scripting/lua-bindings/auto/lua_cocos2dx_fairygui_auto.hpp"
 
+#include "renderer/backend/ProgramCache.h"
 // if you want to use the package manager to install more packages, 
 // don't modify or remove this function
 static int register_all_packages(lua_State* L)
@@ -43,11 +44,46 @@ bool RuntimeScene::init()
 		return false;
 	}
 
+	return true;
+}
+
+
+RuntimeScene::~RuntimeScene()
+{
+}
+
+void RuntimeScene::onExit()
+{
+    GameScene::onExit();
+    _groot->removeChildren();
+    _groot->release();
+    _groot = nullptr;
+
+    removeAllChildren();
+
+    auto director = Director::getInstance();
+    director->getActionManager()->removeAllActions();
+    director->getScheduler()->unscheduleAllWithMinPriority(Scheduler::PRIORITY_NON_SYSTEM_MIN);
+
+    FileUtils::getInstance()->purgeCachedEntries();
+
+    cocos2d::SpriteFrameCache::getInstance()->removeSpriteFrames();
+    director->getTextureCache()->removeAllTextures();
+
+    //backend::ProgramCache::destroyInstance();
+}
+
+void RuntimeScene::onEnter()
+{
+    ScriptEngineManager::getInstance()->removeScriptEngine();
+    // ScriptEngineManager::getInstance()->destroyInstance();
 
     // register lua module
     auto engine = LuaEngine::getInstance();
+
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     lua_State* L = engine->getLuaStack()->getLuaState();
+
     lua_module_register(L);
 
     register_all_packages(L);
@@ -59,21 +95,13 @@ bool RuntimeScene::init()
     //LuaStack* stack = engine->getLuaStack();
     //register_custom_function(stack->getLuaState());
 
-
     FileUtils::getInstance()->addSearchPath("src");
     FileUtils::getInstance()->addSearchPath("res");
 
-	return true;
-}
+    _groot = GRoot::create(this);
+    _groot->retain();
 
-
-RuntimeScene::~RuntimeScene()
-{
-}
-
-void RuntimeScene::onEnter()
-{
-    GameScene::onEnter();
-    auto engine = LuaEngine::getInstance();
     engine->executeScriptFile("main.lua");
+
+    GameScene::onEnter();
 }
