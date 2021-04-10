@@ -41,7 +41,7 @@ CC_BACKEND_BEGIN
 /**
  * Cache and reuse program object.
  */
-class ProgramCache : public Ref
+class CC_DLL ProgramCache : public Ref
 {
 public:
     /** returns the shared instance */

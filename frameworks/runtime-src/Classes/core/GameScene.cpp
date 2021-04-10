@@ -8,9 +8,6 @@ bool GameScene::init()
 		return false;
 	}
 
-	_groot = GRoot::create(this);
-	_groot->retain();
-	
 	return true;
 }
 
