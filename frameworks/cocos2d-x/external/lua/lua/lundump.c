@@ -83,7 +83,14 @@ static TString* LoadString(LoadState* S)
  {
   char* s=luaZ_openspace(S->L,S->b,size);
   LoadBlock(S,s,size);
-  return luaS_newlstr(S->L,s,size-1);		/* remove trailing '\0' */
+#if ORIGINAL_BYTECODE > 0
+     return luaS_newlstr(S->L,s,size-1);        /* remove trailing '\0' */
+#else
+     char ss[size];
+     memset(ss, '\0', size);
+     lua_xor(ss, s, size);
+     return luaS_newlstr(S->L,ss,size-1);   /* remove trailing '\0' */
+#endif
  }
 }
 
