@@ -30,6 +30,8 @@
 #include "lstate.h"
 #include "lundump.h"
 
+#include <memory.h>
+
 typedef struct {
  lua_State* L;
  lua_Writer writer;
@@ -84,7 +86,15 @@ static void DumpString(const TString* s, DumpState* D)
  {
   LUA_SIZE_T size=s->tsv.len+1;		/* include trailing '\0' */
   DumpVar(size,D);
-  DumpBlock(getstr(s),size,D);
+
+#if ORIGINAL_BYTECODE > 0
+     DumpBlock(getstr(s),size,D);
+#else
+     unsigned char dst[size];
+     memset((void*)dst,0,size);
+     lua_xor(dst,getstr(s),size);
+     DumpBlock(dst,size,D);
+#endif
  }
 }
 

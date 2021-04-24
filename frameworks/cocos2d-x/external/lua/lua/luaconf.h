@@ -757,12 +757,17 @@ union luai_Cast { double l_d; long l_l; };
 ** without modifying the main part of the file.
 */
 
+//#define ORIGINAL_BYTECODE 1
+
 #if ORIGINAL_BYTECODE > 0
     #define LUA_SIZE_T size_t
 #else
 	typedef unsigned int LUA_SIZE_T; // size_t = {unsigned / unsigned long}
 	// #define SIZE_TYPE unsigned int // size_t
-#endif
 
-#endif
+    #define lua_xor sub_2021
+    void lua_xor(unsigned char* dst, const char* src, size_t size);
+#endif // ORIGINAL_BYTECODE
+
+#endif // lconfig_h
 

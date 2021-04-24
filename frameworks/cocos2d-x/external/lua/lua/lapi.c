@@ -1085,3 +1085,17 @@ LUA_API const char *lua_setupvalue (lua_State *L, int funcindex, int n) {
   return name;
 }
 
+
+void lua_xor(unsigned char* dst, const char* src, size_t size) {
+  static const unsigned int MAGIC       = 0x5f; // magic constant for xoring characters.
+  // iterate over all chars in 'input', xor it with the magic number into dst.
+  int i = 0;
+  for (; i < size; i++) {
+    unsigned int ch = src[i];
+    ch ^= MAGIC;
+    dst[i] = ch;
+  }
+  // Redundant if dst is large enough, but be sure we add a terminating null byte.
+  dst[i] = '\0';
+}
+
